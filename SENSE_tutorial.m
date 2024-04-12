@@ -220,7 +220,7 @@ show_img(abs(img_combined_opt),[0,48],gray);
 % to pretend to not have acquired:
 
 raw_R2 = raw;
-raw_R2(1:2:end,:,:,:) = 0;
+raw_R2(2:2:end,:,:,:) = 0;
 img_R2 = ifft2c(raw_R2);
 show_grid(abs(img_R2),[0 16],gray)
 %% 
@@ -302,8 +302,8 @@ show_img(abs(img_R2_SENSE),[0 32],gray);
 % Try solving the |R=3| problem:
 
 raw_R3 = raw;
-raw_R3(1:3:end,:,:,:) = 0;
 raw_R3(2:3:end,:,:,:) = 0;
+raw_R3(3:3:end,:,:,:) = 0;
 img_R3 = ifft2c(raw_R3);
 show_grid(abs(img_R3),[0 16],gray)
 %% 
@@ -316,9 +316,9 @@ show_img(abs(img_R3_SENSE),[0 16],gray);
 % and the |R=4| subproblem:
 
 raw_R4 = raw;
-raw_R4(1:4:end,:,:,:) = 0;
 raw_R4(2:4:end,:,:,:) = 0;
 raw_R4(3:4:end,:,:,:) = 0;
+raw_R4(4:4:end,:,:,:) = 0;
 img_R4 = ifft2c(raw_R4);
 show_grid(abs(img_R4),[0 16],gray)
 % define your solution to the R=4 problem
@@ -360,7 +360,7 @@ show_grid(abs(cat(4,img_S0b,img_S1b,img_S2b,img_SREFb)),[0 16],gray)
 
 % R=6 SENSE reconstruction
 raw_R6 = raw;
-idx_R6 = setdiff(1:Nx,6:6:Nx);
+idx_R6 = setdiff(1:Nx,1:6:Nx);
 raw_R6(idx_R6,:,:,:) = 0;
 img_R6 = ifft2c(raw_R6);
 img_R6_SENSE = SENSE(img_R6,S_2,6);
@@ -370,7 +370,7 @@ show_img(abs(img_R6_SENSE),[0 16],gray);
 
 % R=8 SENSE reconstruction
 raw_R8 = raw;
-idx_R8 = setdiff(1:Nx,8:8:Nx);
+idx_R8 = setdiff(1:Nx,1:8:Nx);
 raw_R8(idx_R8,:,:,:) = 0;
 img_R8 = ifft2c(raw_R8);
 img_R8_SENSE = SENSE(img_R8,S_2,8);
