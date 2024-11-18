@@ -1,5 +1,5 @@
 %% SENSE Parallel Imaging
-% Mark Chiew (mark.chiew@ndcn.ox.ac.uk)
+% Mark Chiew (mark.chiew@utoronto.ca)
 % 
 % This MATLAB tutorial gives an introduction to SENSE parallel imaging in 
 % MRI. It walks through the estimation of coil sensitivities, combining images 
@@ -8,7 +8,13 @@
 % 
 % The data required for this can be downloaded from:
 % 
-% |users.fmrib.ox.ac.uk/~mchiew/docs/raw_data.mat|
+% https://github.com/mchiew/SENSE-tutorial/blob/main/raw_data.mat
+%
+% Changelog
+% 2014: Initial version
+% 2022: Migrated to Github
+% 2024: Updated email, raw data link
+
 %% Load data
 %%
 load('raw_data.mat');
